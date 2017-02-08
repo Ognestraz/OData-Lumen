@@ -4,7 +4,8 @@ namespace AlgoWeb\PODataLaravel\Query;
 
 use POData\Providers\Metadata\ResourceProperty;
 use POData\Providers\Metadata\ResourceSet;
-use POData\UriProcessor\QueryProcessor\Expression\Parser\IExpressionProvider;
+use POData\Providers\Expression\IExpressionProvider;
+#use POData\UriProcessor\QueryProcessor\Expression\Parser\IExpressionProvider;
 use POData\UriProcessor\QueryProcessor\ExpressionParser\FilterInfo;
 use POData\UriProcessor\ResourcePathProcessor\SegmentParser\KeyDescriptor;
 use POData\Providers\Query\IQueryProvider;

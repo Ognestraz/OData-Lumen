@@ -48,7 +48,7 @@ class MetadataControllerProvider extends ServiceProvider
             }
             try {
                 if (in_array(
-                    "AlgoWeb\\PODataLaravel\\Controllers\\MetadataControllerTrait",
+                    "RealPage\\OData\\Controllers\\MetadataControllerTrait",
                     class_uses($name, false)
                 )) {
                     $ends[] = new $name();

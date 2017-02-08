@@ -23,8 +23,8 @@ class ODataController extends BaseController
         $host = new ServiceHost($op, $request);
         $host->setServiceUri("/odata.svc/");
 
-        $query = App::make('odataquery');
-        $meta = App::make('metadata');
+        $query = app('odataquery');
+        $meta = app('metadata');
 
         $service = new DataService($query, $meta);
         $service->setHost($host);

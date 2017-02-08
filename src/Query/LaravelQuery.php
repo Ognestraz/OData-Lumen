@@ -370,7 +370,7 @@ class LaravelQuery implements IQueryProvider
      */
     private function createUpdateDeleteCore($sourceEntityInstance, $data, $class, $verb)
     {
-        $raw = App::make('metadataControllers');
+        $raw = app('metadataControllers');
         $map = $raw->getMetadata();
 
         if (!array_key_exists($class, $map)) {

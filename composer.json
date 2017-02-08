@@ -7,7 +7,8 @@
         "php": "~7.0",
         "algo-web/podata": "dev-master",
         "doctrine/dbal": "^2.5",
-        "laravel/lumen-framework": "5.4.*"
+        "laravel/lumen-framework": "5.4.*",
+        "illuminate/routing": "^5.4"
     },
     "require-dev": {
         "mockery/mockery": "dev-master",

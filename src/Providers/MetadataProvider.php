@@ -29,7 +29,7 @@ class MetadataProvider extends ServiceProvider
             return;
         }
 
-        self::setupRoute();
+        $this->setupRoute();
         $isCaching = env('APP_METADATA_CACHING', false);
         $hasCache = Cache::has('metadata');
 
@@ -51,7 +51,7 @@ class MetadataProvider extends ServiceProvider
         $Classes = $AutoClass::$classMap;
         foreach ($Classes as $name => $file) {
             if (\Illuminate\Support\Str::startsWith($name, "App")) {
-                if (in_array("AlgoWeb\\PODataLaravel\\Models\\MetadataTrait", class_uses($name))) {
+                if (in_array("RealPage\\OData\\Models\\MetadataTrait", class_uses($name))) {
                     $ends[] = $name;
                 }
             }
@@ -103,13 +103,16 @@ class MetadataProvider extends ServiceProvider
         }
     }
 
-    private static function setupRoute()
+    private function setupRoute()
     {
         $valueArray = [];
 
-        Route::any('odata.svc/{section}', 'AlgoWeb\PODataLaravel\Controllers\ODataController@index')
+        /*$this->app->get('odata.svc/{section}', 'RealPage\OData\Controllers\ODataController@index');
+        $this->app->get('odata.svc', 'RealPage\OData\Controllers\ODataController@index');*/
+
+        Route::any('odata.svc/{section}', 'RealPage\OData\Controllers\ODataController@index')
             ->where(['section' => '.*']);
-        Route::any('odata.svc', 'AlgoWeb\PODataLaravel\Controllers\ODataController@index');
+        Route::any('odata.svc', 'RealPage\OData\Controllers\ODataController@index');
     }
 
     /**

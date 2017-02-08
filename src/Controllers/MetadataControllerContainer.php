@@ -1,6 +1,6 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Controllers;
+namespace RealPage\OData\Controllers;
 
 class MetadataControllerContainer
 {

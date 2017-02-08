@@ -1,9 +1,9 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Interfaces;
+namespace RealPage\OData\Interfaces;
 
 use Illuminate\Database\Eloquent\Model;
-use AlgoWeb\PODataLaravel\Enums\ActionVerb;
+use RealPage\OData\Enums\ActionVerb;
 
 interface AuthInterface
 {

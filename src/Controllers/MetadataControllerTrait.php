@@ -1,8 +1,8 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Controllers;
+namespace RealPage\OData\Controllers;
 
-use Illuminate\Routing\Controller as BaseController;
+use Laravel\Lumen\Routing\Controller as BaseController;
 
 trait MetadataControllerTrait
 {

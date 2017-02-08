@@ -1,9 +1,9 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Providers;
+namespace RealPage\OData\Providers;
 
 use Illuminate\Support\ServiceProvider;
-use AlgoWeb\PODataLaravel\Query\LaravelQuery as LaravelQuery;
+use RealPage\OData\Query\LaravelQuery as LaravelQuery;
 
 class QueryProvider extends ServiceProvider
 {

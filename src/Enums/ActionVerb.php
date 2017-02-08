@@ -1,6 +1,6 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Enums;
+namespace RealPage\OData\Enums;
 
 use MyCLabs\Enum\Enum;
 

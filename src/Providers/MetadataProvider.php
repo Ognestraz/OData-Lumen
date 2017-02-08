@@ -1,6 +1,6 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Providers;
+namespace RealPage\OData\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;

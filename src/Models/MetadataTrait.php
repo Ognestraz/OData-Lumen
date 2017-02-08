@@ -1,5 +1,5 @@
 <?php
-namespace AlgoWeb\PODataLaravel\Models;
+namespace RealPage\OData\Models;
 
 use Illuminate\Support\Facades\App as App;
 use Illuminate\Database\Eloquent\Relations\Relation;

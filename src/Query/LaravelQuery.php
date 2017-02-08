@@ -1,6 +1,6 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Query;
+namespace RealPage\OData\Query;
 
 use POData\Providers\Metadata\ResourceProperty;
 use POData\Providers\Metadata\ResourceSet;
@@ -14,8 +14,8 @@ use POData\Providers\Query\QueryType;
 use POData\Providers\Query\QueryResult;
 use POData\Providers\Expression\PHPExpressionProvider;
 use \POData\Common\ODataException;
-use AlgoWeb\PODataLaravel\Interfaces\AuthInterface;
-use AlgoWeb\PODataLaravel\Auth\NullAuthProvider;
+use RealPage\OData\Interfaces\AuthInterface;
+use RealPage\OData\Auth\NullAuthProvider;
 use Illuminate\Support\Facades\App;
 
 class LaravelQuery implements IQueryProvider

@@ -1,10 +1,10 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Providers;
+namespace RealPage\OData\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Illuminate\Support\Facades\Cache;
-use AlgoWeb\PODataLaravel\Controllers\MetadataControllerContainer;
+use RealPage\OData\Controllers\MetadataControllerContainer;
 use Illuminate\Support\Facades\App;
 
 class MetadataControllerProvider extends ServiceProvider

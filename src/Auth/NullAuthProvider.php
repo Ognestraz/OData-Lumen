@@ -1,10 +1,10 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Auth;
+namespace RealPage\OData\Auth;
 
-use AlgoWeb\PODataLaravel\Interfaces\AuthInterface;
+use RealPage\OData\Interfaces\AuthInterface;
 use Illuminate\Database\Eloquent\Model;
-use AlgoWeb\PODataLaravel\Enums\ActionVerb;
+use RealPage\OData\Enums\ActionVerb;
 
 class NullAuthProvider implements AuthInterface
 {

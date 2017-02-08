@@ -1,10 +1,10 @@
 <?php
 
-namespace AlgoWeb\PODataLaravel\Controllers;
+namespace RealPage\OData\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
-use AlgoWeb\PODataLaravel\Controllers\Controller as BaseController;
+use RealPage\OData\Controllers\Controller as BaseController;
 use Illuminate\Support\Facades\App;
 use POData\OperationContext\ServiceHost as ServiceHost;
 use POData\SimpleDataService as DataService;

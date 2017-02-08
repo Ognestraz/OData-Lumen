@@ -1,5 +1,5 @@
 {
-    "name": "algo-web/podata-laravel",
+    "name": "AnitaYip/podata-lumen",
     "description": "Expose Odata services from lumen framework",
     "keywords": ["laravel/lumen", "Odata", "services", "POData"],
     "license": "MIT",
@@ -16,7 +16,7 @@
     },
     "autoload": {
         "psr-4": {
-            "AlgoWeb\\PODataLaravel\\": "src/"
+            "RealPage\\OData\\": "src/"
         },
         "classmap": [
             "tests/"

@@ -117,7 +117,7 @@ trait MetadataTrait
             return null;
         }
 
-        $metadata = App::make('metadata');
+        $metadata = app('metadata');
 
         $table = $this->getTable();
 
@@ -142,7 +142,7 @@ trait MetadataTrait
 
     public function hookUpRelationships($entityTypes, $resourceSets)
     {
-        $metadata = \App::make('metadata');
+        $metadata = app('metadata');
         $rel = $this->getRelationshipsFromMethods();
         $thisClass = get_class($this);
         foreach ($rel["HasOne"] as $n => $r) {

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 use RealPage\OData\Controllers\Controller as BaseController;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Storage;
 use POData\OperationContext\ServiceHost as ServiceHost;
 use POData\SimpleDataService as DataService;
 use POData\OperationContext\Web\Illuminate\IlluminateOperationContext as OperationContextAdapter;
@@ -17,7 +18,7 @@ class ODataController extends BaseController
      *
      * @return \Illuminate\Http\Response
      */
-    public function index(Request $request)
+    public function index(Request $request, $dump = false)
     {
         $op = new OperationContextAdapter($request);
         $host = new ServiceHost($op, $request);
@@ -26,11 +27,25 @@ class ODataController extends BaseController
         $query = app('odataquery');
         $meta = app('metadata');
 
-        $service = new DataService($query, $meta);
-        $service->setHost($host);
+        $service = new DataService($query, $meta, $host);
         $service->handleRequest();
 
         $odataResponse = $op->outgoingResponse();
+
+        if (true === $dump) {
+            // iff XTest header is set, containing class and method name
+            // dump outgoing odataResponse, metadata, and incoming request
+            $xTest = $request->header('XTest', null);
+            if (null != $xTest) {
+                $cerealRequest = serialize($request);
+                $cerealMeta = serialize($meta);
+                $cerealResponse = serialize($odataResponse);
+                Storage::put($xTest.'request', $cerealRequest);
+                Storage::put($xTest.'metadata', $cerealMeta);
+                Storage::put($xTest.'response', $cerealResponse);
+            }
+        }
+
         $content = $odataResponse->getStream();
         $headers = $odataResponse->getHeaders();
         $responseCode = $headers[\POData\Common\ODataConstants::HTTPRESPONSE_HEADER_STATUS_CODE];

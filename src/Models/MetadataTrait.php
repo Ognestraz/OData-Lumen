@@ -16,6 +16,7 @@ trait MetadataTrait
         'integer' => EdmPrimitiveType::INT32,
         'string' => EdmPrimitiveType::STRING,
         'datetime' => EdmPrimitiveType::DATETIME,
+        'float' => EdmPrimitiveType::SINGLE,
         'decimal' => EdmPrimitiveType::DECIMAL,
         'text' => EdmPrimitiveType::STRING,
         'boolean' => EdmPrimitiveType::BOOLEAN,
@@ -123,7 +124,9 @@ trait MetadataTrait
 
         $complex = $metadata->addEntityType(new \ReflectionClass(get_class($this)), $table, $MetaNamespace);
         $keyName = $this->getKeyName();
-        $metadata->addKeyProperty($complex, $keyName, $this->mapping[$raw[$keyName]['type']]);
+        if(null != $keyName){
+            $metadata->addKeyProperty($complex, $keyName, $this->mapping[$raw[$keyName]['type']]);
+        }
         foreach ($raw as $key => $secret) {
             if ($key == $keyName) {
                 continue;

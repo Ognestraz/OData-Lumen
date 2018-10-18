@@ -1,7 +1,7 @@
 {
     "name": "ognestraz/odata-lumen",
     "description": "Expose Odata services from lumen framework",
-    "keywords": ["laravel/lumen", "Odata", "services", "POData", "realpage"],
+    "keywords": ["lumen", "Odata", "services", "POData", "realpage"],
     "license": "MIT",
     "require": {
         "php": "~7.0",
